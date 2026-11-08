@@ -129,9 +129,8 @@ git clone https://github.com/FarhanSyed987/LandIQ-Github.git
 cd LandIQ-Github/LandIQ-Project/LandIQ
 cp .env.example .env
 docker compose up --build
-```
 
-Open **http://localhost:3000** and sign in with `officer@landiq.gov` / `LandIQ@123`.
+Open **http://localhost:3000** 
 
 | Service | URL / Port | Purpose |
 |---|---|---|
@@ -177,8 +176,6 @@ A `Makefile` wraps this: `make setup`, `make backend`, `make frontend`, `make re
 
 ## ⚙️ Configuration
 
-Copy `.env.example` to `.env`. Key variables:
-
 | Variable | Default | Meaning |
 |---|---|---|
 | `DEMO_MODE` | `true` | Serve transcription from the controlled demo dataset |
@@ -194,23 +191,9 @@ Copy `.env.example` to `.env`. Key variables:
 
 > Thresholds are prototype operating parameters, not legal or universal accuracy standards.
 
-## 🔑 Demo Credentials
-
-| Role | Email | Password |
-|---|---|---|
-| Officer | `officer@landiq.gov` | `LandIQ@123` |
-| Administrator | `admin@landiq.gov` | `LandIQ@123` |
-| Reviewer | `reviewer@landiq.gov` | `LandIQ@123` |
-
 A Reviewer cannot upload or verify; an Officer cannot change settings; an Administrator can do both.
 
 ## 🎬 The 5-Minute Demo
-
-Reset to a clean state first:
-
-```bash
-python backend/scripts/reset_demo.py --yes
-```
 
 1. **Sign in** as the officer
 2. **Dashboard**: 24 records, 4 high risk, 6 GIS mismatches, parcel map
@@ -271,17 +254,7 @@ A single engine's self-reported confidence is a poor uncertainty estimate on deg
 
 Interactive docs: **http://localhost:8000/docs** (Swagger) and `/redoc`. 47 endpoints across auth, documents, records, parcels, validation, dashboard, audit, search, feedback, and settings. See [`docs/API.md`](docs/API.md).
 
-Errors are typed and never leak stack traces:
-
-```json
-{
-  "error": {
-    "code": "unsupported_file",
-    "message": "That file is not a PDF, PNG or JPEG.",
-    "hint": "Re-scan or export the document as PDF or PNG."
-  }
-}
-```
+Errors are typed and never leak stack track
 
 ## 🧪 Testing
 
